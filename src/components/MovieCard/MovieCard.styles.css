@@ -1,0 +1,116 @@
+.movie-item {
+  width: calc(20% - 10px);
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #0099ff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.movie-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #7dc4f4;
+}
+
+.movie-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.movie-rating {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  z-index: 1;
+}
+
+.movie-rating-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  box-shadow: 0 0 8px #0099ff;
+}
+
+.movie-rating-circle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}
+
+.movie-rating-number {
+  font-weight: bold;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center;
+  background: linear-gradient(
+    0deg,
+    rgba(150, 246, 255, 0.5),
+    rgba(231, 88, 207, 0.5)
+  );
+}
+
+.movie-title {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  z-index: 1;
+}
+
+.movie-release-date {
+  position: absolute;
+  bottom: 44px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0 3px 1px;
+  font-size: 14px;
+  z-index: 2;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .movie-item {
+    width: calc(33.33% - 10px);
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-item {
+    width: calc(50% - 10px);
+  }
+}

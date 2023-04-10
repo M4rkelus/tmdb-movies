@@ -11,10 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background-image: url('https://phonoteka.org/uploads/posts/2022-09/1663702196_9-phonoteka-org-p-kinoteatr-fon-oboi-10.jpg');
+  min-width: 320px;
+  background-image: url('./assets/background.jpeg');
   background-color: #f7f7f7;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -34,7 +36,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 button {

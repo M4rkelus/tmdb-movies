@@ -1,4 +1,4 @@
-.movie-list-container {
+.actor-list-container {
   display: flex;
   flex-direction: column;
   margin: 0 auto 61px;
@@ -11,13 +11,13 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.movie-list-search {
+.actor-list-search {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.movie-list-title {
+.actor-list-title {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -28,7 +28,7 @@
   text-align: center;
 }
 
-.movie-list {
+.actor-list {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -52,15 +52,15 @@
 }
 
 @media (max-width: 768px) {
-  .movie-list-container {
+  .actor-list-container {
     max-width: 100%;
     padding: 10px;
   }
-  .movie-list-title {
+  .actor-list-title {
     font-size: 1.5rem;
   }
 
-  .movie-list-search {
+  .actor-list-search {
     flex-direction: column-reverse;
     align-items: center;
     gap: 10px;

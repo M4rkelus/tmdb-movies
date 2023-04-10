@@ -1,23 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MovieList from '../MovieList/MovieList.component';
-import MovieDetails from '../MovieDetails/MovieDetails.component';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Header from '../Header/Header.component';
 import Footer from '../Footer/Footer.component';
+import MoviesPage from '../../pages/MoviesPage/MoviesPage.component';
+import ActorsPage from '../../pages/ActorsPage/ActorsPage.component';
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage.component';
+import ActorDetailsPage from '../../pages/ActorDetailsPage/ActorDetailsPage.component';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.component';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.component';
 
-function App() {
+const App = () => {
   return (
     <>
-      <Header />
-      <Router>
+      <ErrorBoundary>
+        <Header />
         <Routes>
-          <Route path='/' element={<MovieList category='popular' />} />
-          <Route path='/movies/:id' element={<MovieDetails />} />
+          <Route path='/' element={<Navigate to='/movies' />} />
+          <Route path='/movies' element={<MoviesPage />} />
+          <Route path='/movie/:id' element={<MovieDetailsPage />} />
+          <Route path='/actors' element={<ActorsPage />} />
+          <Route path='/person/:id' element={<ActorDetailsPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
-      </Router>
-      <Footer />
+        <Footer />
+      </ErrorBoundary>
     </>
   );
-}
+};
 
 export default App;

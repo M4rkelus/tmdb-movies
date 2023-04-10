@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchMovieById } from '../../api';
+import React from 'react';
 
 import './MovieDetails.styles.css';
 
-function MovieDetails() {
-  const [movie, setMovie] = useState(null);
-  const { id } = useParams();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const movie = await fetchMovieById(id);
-      setMovie(movie);
-    };
-    fetchData();
-  }, [id]);
-
-  if (!movie) {
-    return <div>Loading...</div>;
-  }
-
+const MovieDetails = ({ movie }) => {
   return (
     <div className='movie-details'>
       <img
         className='movie-details-poster'
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        src={
+          movie.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+            : require('../../assets/placeholder.jpg')
+        }
         alt={movie.title}
       />
       <div className='movie-details-info'>
@@ -39,6 +26,6 @@ function MovieDetails() {
       </div>
     </div>
   );
-}
+};
 
 export default MovieDetails;
